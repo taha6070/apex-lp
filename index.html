@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APEX Auto Parts | Engineered to Move You</title>
+  <meta name="description" content="Genuine and aftermarket auto parts for every make and model, delivered fast. Find the right part for your vehicle in seconds." />
+  <meta name="theme-color" content="#0B0C0E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="/images/hero/hero-brake.webp" />
+</head>
+<body class="is-loading">
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <div class="preloader__logo">APEX</div>
+      <div class="preloader__bar"><span id="preBar"></span></div>
+      <div class="preloader__count"><span id="preCount">0</span>%</div>
+    </div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo" data-hover aria-label="APEX Auto Parts home">
+        <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 2 30 28h-7.2L16 14.6 9.2 28H2z" fill="currentColor" />
+          <path d="M16 20.5 19.6 28h-7.2z" fill="var(--accent)" />
+        </svg>
+        <span class="logo__text">APEX<small>AUTO PARTS</small></span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#categories" data-hover>Shop</a>
+        <a href="#brands" data-hover>Brands</a>
+        <a href="#wholesale" data-hover>Wholesale</a>
+        <a href="#about" data-hover>About</a>
+        <a href="#contact" data-hover>Contact</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" aria-label="Search" data-hover>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+        <button class="icon-btn" aria-label="Cart" data-hover>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.5l2.2 11h10.6l2-8H6.4"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg>
+          <span class="icon-btn__badge">0</span>
+        </button>
+        <a href="#finder" class="btn btn--sm btn--primary header__cta" data-magnetic data-hover>Find Your Part</a>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile nav -->
+  <div class="mnav" id="mnav" aria-hidden="true">
+    <nav>
+      <a href="#categories">Shop</a>
+      <a href="#brands">Brands</a>
+      <a href="#wholesale">Wholesale</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#finder" class="btn btn--primary btn--lg">Find Your Part</a>
+  </div>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <img src="/images/hero/hero-bg.jpg" alt="" class="hero__bg-img" id="heroBg" />
+        <div class="hero__bg-shade"></div>
+        <div class="hero__bg-grid"></div>
+        <div class="hero__bg-glow"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <div class="hero__eyebrow" data-hero="fade">
+            <span class="hero__eyebrow-dot"></span>
+            Genuine &amp; aftermarket parts · All makes
+          </div>
+
+          <h1 class="hero__title" aria-label="Engineered to move you">
+            <span class="split-line"><span class="split-inner">Engineered</span></span>
+            <span class="split-line"><span class="split-inner">to <em>move</em> you</span></span>
+          </h1>
+
+          <p class="hero__desc" data-hero="fade">
+            Brakes, engines, suspension and more, matched to your exact vehicle and delivered fast. The right part, the first time.
+          </p>
+
+          <div class="hero__cta" data-hero="fade">
+            <a href="#finder" class="btn btn--primary btn--lg" data-magnetic data-hover>
+              Find Your Part
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#categories" class="btn btn--ghost btn--lg" data-magnetic data-hover>Browse Catalog</a>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__ring hero__ring--1"></div>
+          <div class="hero__ring hero__ring--2"></div>
+          <div class="hero__aura"></div>
+          <div class="hero__product" id="heroProduct">
+            <div class="hero__float" id="heroFloat">
+              <img src="/images/hero/hero-brake.webp" alt="" class="hero__disc" id="heroDisc" width="1200" height="1200" />
+            </div>
+          </div>
+          <div class="hero__sparks" id="sparks"></div>
+
+          <div class="hero__tag hero__tag--a" data-hero="tag">
+            <span class="hero__tag-dot"></span>
+            <div><b>Slotted &amp; drilled</b><small>Performance rotor</small></div>
+          </div>
+          <div class="hero__tag hero__tag--b" data-hero="tag">
+            <span class="hero__tag-dot"></span>
+            <div><b>6-piston caliper</b><small>OEM-grade fitment</small></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vehicle finder -->
+      <div class="container hero__finder-wrap">
+        <form class="finder" id="finder" data-hero="finder" autocomplete="off">
+          <div class="finder__title">
+            <span class="finder__step">01</span>
+            <div><b>Find your part</b><small>Pick your vehicle</small></div>
+          </div>
+          <label class="field">
+            <span>Make</span>
+            <select id="fMake" required><option value="">Select make</option></select>
+          </label>
+          <label class="field">
+            <span>Model</span>
+            <select id="fModel" required disabled><option value="">Select model</option></select>
+          </label>
+          <label class="field">
+            <span>Year</span>
+            <select id="fYear" required disabled><option value="">Select year</option></select>
+          </label>
+          <label class="field">
+            <span>Engine</span>
+            <select id="fEngine" required disabled><option value="">Select engine</option></select>
+          </label>
+          <button type="submit" class="btn btn--primary finder__btn" data-magnetic data-hover>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <span id="finderBtnText">Search Parts</span>
+          </button>
+        </form>
+
+        <ul class="badges" data-hero="fade">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.4 3.4 8 8 9 4.6-1 8-4.6 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>OEM Certified</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>2-Year Warranty</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>Same-Day Dispatch</li>
+        </ul>
+      </div>
+
+      <a href="#categories" class="hero__scroll" data-hero="fade" data-hover aria-label="Scroll down">
+        <span>Scroll</span><i></i>
+      </a>
+    </section>
+
+    <!-- BRANDS MARQUEE (placeholder wordmarks: replace with real partner logos) -->
+    <section class="brands" id="brands" aria-label="Brands we carry">
+      <div class="brands__label" data-reveal-line>Trusted brands &amp; partners</div>
+      <div class="brands__viewport">
+        <div class="brands__track" id="brandsTrack">
+          <span class="bw bw--1">TORQUEWORKS</span>
+          <span class="bw bw--2">Vantage<i>Auto</i></span>
+          <span class="bw bw--3">KINETIC</span>
+          <span class="bw bw--4">NORTHGATE</span>
+          <span class="bw bw--5">Ironline</span>
+          <span class="bw bw--6">REDLINE&nbsp;LABS</span>
+          <span class="bw bw--7">Meridian</span>
+          <span class="bw bw--8">STRATOS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section categories" id="categories">
+      <div class="container">
+        <header class="sec-head">
+          <div>
+            <div class="eyebrow" data-reveal-line><i></i>Shop by category</div>
+            <h2 class="sec-title" data-reveal-up>Everything your<br />vehicle <em>needs</em></h2>
+          </div>
+          <p class="sec-sub" data-reveal-up>Six core systems, thousands of parts. Pick a category and we'll narrow it down to what fits your car.</p>
+        </header>
+
+        <div class="cat-grid">
+          <a href="#" class="cat" data-reveal-card data-hover data-tilt>
+            <img src="/images/categories/engine.jpg" alt="Engine piston and connecting rod" loading="lazy" width="1200" height="1200" />
+            <span class="cat__num">01</span>
+            <div class="cat__body">
+              <h3>Engine</h3>
+              <p>Pistons · Gaskets · Timing</p>
+            </div>
+            <span class="cat__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </a>
+          <a href="#" class="cat" data-reveal-card data-hover data-tilt>
+            <img src="/images/categories/brakes.jpg" alt="Drilled brake rotor with red caliper" loading="lazy" width="1200" height="1200" />
+            <span class="cat__num">02</span>
+            <div class="cat__body">
+              <h3>Brakes</h3>
+              <p>Discs · Pads · Calipers</p>
+            </div>
+            <span class="cat__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </a>
+          <a href="#" class="cat" data-reveal-card data-hover data-tilt>
+            <img src="/images/categories/suspension.jpg" alt="Performance coilover shock absorber" loading="lazy" width="1200" height="1200" />
+            <span class="cat__num">03</span>
+            <div class="cat__body">
+              <h3>Suspension</h3>
+              <p>Coilovers · Shocks · Arms</p>
+            </div>
+            <span class="cat__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </a>
+          <a href="#" class="cat" data-reveal-card data-hover data-tilt>
+            <img src="/images/categories/electrical.jpg" alt="Spark plugs and ignition coil" loading="lazy" width="1200" height="1200" />
+            <span class="cat__num">04</span>
+            <div class="cat__body">
+              <h3>Electrical</h3>
+              <p>Spark plugs · Coils · Sensors</p>
+            </div>
+            <span class="cat__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </a>
+          <a href="#" class="cat" data-reveal-card data-hover data-tilt>
+            <img src="/images/categories/filters.jpg" alt="Oil filter and air filter" loading="lazy" width="1200" height="1200" />
+            <span class="cat__num">05</span>
+            <div class="cat__body">
+              <h3>Filters</h3>
+              <p>Oil · Air · Cabin</p>
+            </div>
+            <span class="cat__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </a>
+          <a href="#" class="cat" data-reveal-card data-hover data-tilt>
+            <img src="/images/categories/body.jpg" alt="LED sports car headlight" loading="lazy" width="1200" height="1200" />
+            <span class="cat__num">06</span>
+            <div class="cat__body">
+              <h3>Body Parts</h3>
+              <p>Lights · Mirrors · Panels</p>
+            </div>
+            <span class="cat__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS (placeholder names & prices) -->
+    <section class="section products" id="products">
+      <div class="container">
+        <header class="sec-head">
+          <div>
+            <div class="eyebrow" data-reveal-line><i></i>Featured parts</div>
+            <h2 class="sec-title" data-reveal-up>Best sellers,<br />ready to <em>ship</em></h2>
+          </div>
+          <div class="slider-nav" data-reveal-up>
+            <button class="round-btn" id="prodPrev" aria-label="Previous products" data-hover><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+            <button class="round-btn" id="prodNext" aria-label="Next products" data-hover><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </header>
+
+        <div class="prod-track" id="prodTrack">
+          <article class="prod" data-reveal-card>
+            <div class="prod__media">
+              <img src="/images/products/turbo.jpg" alt="Performance turbocharger" loading="lazy" width="1000" height="1000" />
+              <span class="prod__badge">Best seller</span>
+            </div>
+            <div class="prod__info">
+              <div class="prod__brand">APEX Performance</div>
+              <h3>Performance Turbocharger</h3>
+              <div class="stars" aria-label="Rated 4.9 out of 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><span>4.9</span></div>
+              <div class="prod__row">
+                <div class="prod__price">$489<small>.00</small></div>
+                <button class="btn btn--primary btn--sm add-cart" data-name="Performance Turbocharger" data-hover>Add to cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="prod" data-reveal-card>
+            <div class="prod__media">
+              <img src="/images/products/pads.jpg" alt="Ceramic brake pad set" loading="lazy" width="1000" height="1000" />
+              <span class="prod__badge">In stock</span>
+            </div>
+            <div class="prod__info">
+              <div class="prod__brand">APEX Brake Systems</div>
+              <h3>Ceramic Brake Pad Set</h3>
+              <div class="stars" aria-label="Rated 4.8 out of 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><span>4.8</span></div>
+              <div class="prod__row">
+                <div class="prod__price">$79<small>.00</small></div>
+                <button class="btn btn--primary btn--sm add-cart" data-name="Ceramic Brake Pad Set" data-hover>Add to cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="prod" data-reveal-card>
+            <div class="prod__media">
+              <img src="/images/products/exhaust.jpg" alt="Stainless steel exhaust tip" loading="lazy" width="1000" height="1000" />
+              <span class="prod__badge">New</span>
+            </div>
+            <div class="prod__info">
+              <div class="prod__brand">APEX Performance</div>
+              <h3>Stainless Cat-Back Exhaust</h3>
+              <div class="stars" aria-label="Rated 4.7 out of 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><span>4.7</span></div>
+              <div class="prod__row">
+                <div class="prod__price">$349<small>.00</small></div>
+                <button class="btn btn--primary btn--sm add-cart" data-name="Stainless Cat-Back Exhaust" data-hover>Add to cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="prod" data-reveal-card>
+            <div class="prod__media">
+              <img src="/images/products/battery.jpg" alt="AGM car battery" loading="lazy" width="1000" height="1000" />
+              <span class="prod__badge">In stock</span>
+            </div>
+            <div class="prod__info">
+              <div class="prod__brand">APEX Power</div>
+              <h3>High-Output AGM Battery</h3>
+              <div class="stars" aria-label="Rated 4.8 out of 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><span>4.8</span></div>
+              <div class="prod__row">
+                <div class="prod__price">$189<small>.00</small></div>
+                <button class="btn btn--primary btn--sm add-cart" data-name="High-Output AGM Battery" data-hover>Add to cart</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPLODED VIEW (scroll-driven) -->
+    <section class="xv" id="engineering" aria-labelledby="xvTitle">
+      <div class="xv__stage">
+        <div class="xv__bg" aria-hidden="true"></div>
+        <div class="container xv__inner">
+          <div class="xv__head">
+            <div class="eyebrow"><i></i>Engineering</div>
+            <h2 class="sec-title" id="xvTitle">Built piece<br />by <em>piece</em></h2>
+            <p class="sec-sub">Every turbocharger we sell is traceable down to its core components. Keep scrolling to take one apart.</p>
+          </div>
+
+          <div class="xv__diagram">
+            <svg class="xv__svg" id="xvSvg" viewBox="0 0 1400 560" role="img" aria-label="Exploded view of a turbocharger showing five components">
+              <defs>
+                <linearGradient id="gMetal" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#25272c" /><stop offset=".42" stop-color="#9a9ea8" /><stop offset="1" stop-color="#1f2125" />
+                </linearGradient>
+                <linearGradient id="gMetalDark" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#1b1c20" /><stop offset=".45" stop-color="#5d6068" /><stop offset="1" stop-color="#16171a" />
+                </linearGradient>
+                <linearGradient id="gHeat" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#2a1a17" /><stop offset=".45" stop-color="#b4573a" /><stop offset="1" stop-color="#241512" />
+                </linearGradient>
+              </defs>
+
+              <line class="xv__axis" id="xvAxis" x1="40" y1="260" x2="1360" y2="260" />
+
+              <!-- 05 turbine housing -->
+              <g class="xv__part" data-cx="900" data-dx="300">
+                <path class="xv__fill" fill="url(#gHeat)" d="M60 215 L30 170 Q-20 120-80 140 Q-135 170-130 260 Q-135 350-80 380 Q-20 400 30 350 L60 305 Z" />
+                <rect class="xv__fill" fill="url(#gHeat)" x="60" y="212" width="70" height="96" rx="4" />
+                <rect class="xv__line" x="124" y="200" width="10" height="120" rx="3" fill="url(#gMetal)" />
+                <circle class="xv__line" cx="-40" cy="260" r="72" fill="none" stroke-dasharray="4 5" />
+                <circle class="xv__line" cx="-40" cy="260" r="38" fill="none" />
+                <circle cx="-95" cy="150" r="5" fill="#0b0c0e" class="xv__line" /><circle cx="-95" cy="370" r="5" fill="#0b0c0e" class="xv__line" />
+                <g class="xv__label"><line x1="0" y1="408" x2="0" y2="432" /><text x="0" y="458" class="xv__n">05</text><text x="0" y="484" class="xv__t">Turbine Housing</text></g>
+              </g>
+              <!-- 01 compressor housing -->
+              <g class="xv__part" data-cx="470" data-dx="-300">
+                <path class="xv__fill" fill="url(#gMetal)" d="M-60 215 L-30 170 Q20 120 80 140 Q135 170 130 260 Q135 350 80 380 Q20 400-30 350 L-60 305 Z" />
+                <rect class="xv__fill" fill="url(#gMetal)" x="-130" y="212" width="74" height="96" rx="4" />
+                <rect class="xv__line" x="-134" y="200" width="10" height="120" rx="3" fill="url(#gMetalDark)" />
+                <circle class="xv__line" cx="40" cy="260" r="72" fill="none" stroke-dasharray="4 5" />
+                <circle class="xv__line" cx="40" cy="260" r="38" fill="none" />
+                <circle cx="95" cy="150" r="5" fill="#0b0c0e" class="xv__line" /><circle cx="95" cy="370" r="5" fill="#0b0c0e" class="xv__line" />
+                <g class="xv__label"><line x1="0" y1="408" x2="0" y2="432" /><text x="0" y="458" class="xv__n">01</text><text x="0" y="484" class="xv__t">Compressor Housing</text></g>
+              </g>
+              <!-- 03 center cartridge -->
+              <g class="xv__part" data-cx="690" data-dx="0">
+                <rect class="xv__fill" fill="url(#gMetalDark)" x="-60" y="205" width="120" height="110" rx="10" />
+                <rect class="xv__fill" fill="url(#gMetal)" x="-82" y="188" width="24" height="144" rx="4" />
+                <rect class="xv__fill" fill="url(#gMetal)" x="58" y="188" width="24" height="144" rx="4" />
+                <rect class="xv__fill" fill="url(#gMetal)" x="-16" y="172" width="32" height="36" rx="4" />
+                <rect class="xv__fill" fill="url(#gMetal)" x="-16" y="312" width="32" height="36" rx="4" />
+                <path class="xv__line" d="M-60 240h120M-60 280h120" fill="none" />
+                <g class="xv__label"><line x1="0" y1="352" x2="0" y2="432" /><text x="0" y="458" class="xv__n">03</text><text x="0" y="484" class="xv__t">Center Cartridge</text></g>
+              </g>
+              <!-- 02 compressor wheel -->
+              <g class="xv__part" data-cx="500" data-dx="-150">
+                <path class="xv__fill" fill="url(#gMetal)" d="M-34 232 L34 192 L34 328 L-34 288 Z" />
+                <g class="xv__blades"><path d="M-34 236L34 196M-34 244L34 217M-34 252L34 238M-34 260L34 260M-34 268L34 281M-34 276L34 302M-34 284L34 323" /></g>
+                <g class="xv__label"><line x1="0" y1="338" x2="0" y2="478" /><text x="0" y="506" class="xv__n">02</text><text x="0" y="532" class="xv__t">Compressor Wheel</text></g>
+              </g>
+              <!-- 04 turbine wheel -->
+              <g class="xv__part" data-cx="860" data-dx="150">
+                <path class="xv__fill" fill="url(#gHeat)" d="M-40 205 L40 238 L40 282 L-40 315 Z" />
+                <g class="xv__blades"><path d="M-40 209L40 240M-40 227L40 247M-40 245L40 254M-40 263L40 261M-40 280L40 268M-40 298L40 275M-40 312L40 280" /></g>
+                <g class="xv__label"><line x1="0" y1="322" x2="0" y2="478" /><text x="0" y="506" class="xv__n">04</text><text x="0" y="532" class="xv__t">Turbine Wheel</text></g>
+              </g>
+            </svg>
+
+            <ol class="xv__legend">
+              <li><b>01</b> Compressor housing <span>Directs and pressurises intake air</span></li>
+              <li><b>02</b> Compressor wheel <span>Machined blades spin up to force air in</span></li>
+              <li><b>03</b> Center cartridge <span>Bearings, oil and coolant passages</span></li>
+              <li><b>04</b> Turbine wheel <span>Heat-resistant wheel driven by exhaust gas</span></li>
+              <li><b>05</b> Turbine housing <span>Channels exhaust energy to the wheel</span></li>
+            </ol>
+          </div>
+
+          <div class="xv__progress" aria-hidden="true"><span>Assembled</span><div><i id="xvBar"></i></div><span>Exploded</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS / WHY US (placeholder numbers: replace with real figures) -->
+    <section class="section why" id="about">
+      <div class="container">
+        <header class="sec-head sec-head--center">
+          <div class="eyebrow" data-reveal-line><i></i>Why APEX</div>
+          <h2 class="sec-title" data-reveal-up>Parts you can <em>trust</em>,<br />people you can reach</h2>
+        </header>
+
+        <div class="stats">
+          <div class="stat" data-reveal-card>
+            <div class="stat__num"><span data-counter data-count-to="25">0</span><sup>+</sup></div>
+            <div class="stat__label">Years in business</div>
+          </div>
+          <div class="stat" data-reveal-card>
+            <div class="stat__num"><span data-counter data-count-to="120">0</span><sup>K</sup></div>
+            <div class="stat__label">Parts in stock</div>
+          </div>
+          <div class="stat" data-reveal-card>
+            <div class="stat__num"><span data-counter data-count-to="50">0</span><sup>K+</sup></div>
+            <div class="stat__label">Happy drivers</div>
+          </div>
+          <div class="stat" data-reveal-card>
+            <div class="stat__num"><span data-counter data-count-to="24">0</span><sup>h</sup></div>
+            <div class="stat__label">Dispatch time</div>
+          </div>
+        </div>
+
+        <div class="feats">
+          <article class="feat" data-reveal-card data-tilt>
+            <div class="feat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.4 3.4 8 8 9 4.6-1 8-4.6 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <h3>Genuine parts</h3>
+            <p>Every part is sourced from verified manufacturers and checked against your vehicle before it ships.</p>
+          </article>
+          <article class="feat" data-reveal-card data-tilt>
+            <div class="feat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/><path d="M19 20c0 1.2-1.8 2-5 2"/></svg></div>
+            <h3>Expert support</h3>
+            <p>Real mechanics on the phone and chat to help you pick the right part and fit it with confidence.</p>
+          </article>
+          <article class="feat" data-reveal-card data-tilt>
+            <div class="feat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></div>
+            <h3>Easy returns</h3>
+            <p>Ordered the wrong one? Send it back. Simple, no-hassle returns and a warranty on every order.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section how" id="how">
+      <div class="how__bg" aria-hidden="true"></div>
+      <div class="container">
+        <header class="sec-head sec-head--center">
+          <div class="eyebrow" data-reveal-line><i></i>How it works</div>
+          <h2 class="sec-title" data-reveal-up>From garage to <em>doorstep</em><br />in three steps</h2>
+        </header>
+
+        <div class="steps" id="steps">
+          <div class="steps__line" aria-hidden="true"><i id="stepsLine"></i></div>
+          <article class="step" data-reveal-card>
+            <span class="step__ghost">01</span>
+            <div class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16 6.8 10a2 2 0 0 1 1.9-1.4h6.6a2 2 0 0 1 1.9 1.4L19 16"/><path d="M3 16h18v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1H7v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><circle cx="7.5" cy="13" r=".8"/><circle cx="16.5" cy="13" r=".8"/></svg></div>
+            <h3>Select your vehicle</h3>
+            <p>Choose make, model, year and engine so we know exactly what you drive.</p>
+          </article>
+          <article class="step" data-reveal-card>
+            <span class="step__ghost">02</span>
+            <div class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/></svg></div>
+            <h3>Match the part</h3>
+            <p>See only the parts that fit, compare options and check compatibility at a glance.</p>
+          </article>
+          <article class="step" data-reveal-card>
+            <span class="step__ghost">03</span>
+            <div class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></div>
+            <h3>Delivered to your door</h3>
+            <p>We pack it, dispatch it fast and keep you updated until it arrives.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS (sample quotes: replace with real reviews) -->
+    <section class="section testi" id="reviews">
+      <div class="container">
+        <header class="sec-head sec-head--center">
+          <div class="eyebrow" data-reveal-line><i></i>Reviews</div>
+          <h2 class="sec-title" data-reveal-up>Drivers and workshops<br />who <em>rely on us</em></h2>
+        </header>
+
+        <div class="slider" id="testi" data-reveal-up>
+          <div class="slider__quote" aria-hidden="true">&ldquo;</div>
+          <div class="slider__stage">
+            <figure class="tslide active">
+              <div class="stars stars--lg" aria-label="5 out of 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></div>
+              <blockquote>The part matched my car first time and arrived the next day. No guesswork, no returns. This is how buying parts should work.</blockquote>
+              <figcaption><span class="avatar">DM</span><div><b>Daniel M.</b><small>BMW 3 Series owner</small></div></figcaption>
+            </figure>
+            <figure class="tslide">
+              <div class="stars stars--lg" aria-label="5 out of 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></div>
+              <blockquote>We restock our workshop here every week. The trade pricing and reliable dispatch mean our cars are never waiting on a part.</blockquote>
+              <figcaption><span class="avatar">RK</span><div><b>Rashid K.</b><small>Workshop owner</small></div></figcaption>
+            </figure>
+            <figure class="tslide">
+              <div class="stars stars--lg" aria-label="5 out of 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></div>
+              <blockquote>I wasn't sure which brake kit to pick. Their support walked me through it and the result was night and day on track.</blockquote>
+              <figcaption><span class="avatar">SA</span><div><b>Sara A.</b><small>Track day enthusiast</small></div></figcaption>
+            </figure>
+          </div>
+          <div class="slider__controls">
+            <button class="round-btn" id="tPrev" aria-label="Previous review" data-hover><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+            <div class="dots" id="tDots"><button class="is-active" aria-label="Review 1"></button><button aria-label="Review 2"></button><button aria-label="Review 3"></button></div>
+            <button class="round-btn" id="tNext" aria-label="Next review" data-hover><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHOLESALE -->
+    <section class="section wholesale" id="wholesale">
+      <div class="wholesale__bg" aria-hidden="true"><img src="/images/bg/wholesale.jpg" alt="" loading="lazy" data-parallax="0.12" /></div>
+      <div class="container wholesale__inner">
+        <div class="wholesale__copy">
+          <div class="eyebrow" data-reveal-line><i></i>For workshops &amp; fleets</div>
+          <h2 class="sec-title" data-reveal-up>Run a workshop?<br />Get <em>trade pricing</em></h2>
+          <p class="sec-sub" data-reveal-up>Open a trade account and keep your bays moving with better prices, priority dispatch and a dedicated account manager.</p>
+          <ul class="checks">
+            <li data-reveal-card><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Volume discounts on every order</li>
+            <li data-reveal-card><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Dedicated account manager</li>
+            <li data-reveal-card><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Priority dispatch and flexible payment terms</li>
+          </ul>
+        </div>
+
+        <div class="wform" data-reveal-up>
+          <form id="wForm" novalidate>
+            <h3>Apply for a trade account</h3>
+            <p class="wform__sub">We'll get back to you within one business day.</p>
+            <div class="wform__grid">
+              <label class="in"><span>Full name</span><input name="name" type="text" required autocomplete="name" placeholder="Your name" /></label>
+              <label class="in"><span>Workshop / company</span><input name="company" type="text" required autocomplete="organization" placeholder="Workshop name" /></label>
+              <label class="in"><span>Phone</span><input name="phone" type="tel" required autocomplete="tel" placeholder="Phone number" /></label>
+              <label class="in"><span>Email</span><input name="email" type="email" required autocomplete="email" placeholder="you@workshop.com" /></label>
+              <label class="in in--full"><span>What do you need?</span><textarea name="message" rows="3" placeholder="Parts you buy most, monthly volume…"></textarea></label>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg wform__btn" data-magnetic data-hover>Apply for wholesale
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </form>
+          <div class="wform__done" id="wDone" hidden>
+            <div class="wform__tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></div>
+            <h3>Application received</h3>
+            <p>Thanks! A member of our trade team will contact you shortly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta" id="cta">
+      <div class="cta__bg" aria-hidden="true"><img src="/images/bg/cta.jpg" alt="" loading="lazy" data-parallax="0.15" /></div>
+      <div class="container cta__inner">
+        <div class="eyebrow eyebrow--center" data-reveal-line><i></i>Ready when you are</div>
+        <h2 class="cta__title" data-reveal-up>The right part.<br /><em>First time.</em></h2>
+        <p class="cta__sub" data-reveal-up>Tell us what you drive and we'll do the rest. Fast dispatch, honest advice, parts that fit.</p>
+        <div class="cta__actions" data-reveal-up>
+          <a href="#finder" class="btn btn--primary btn--lg" data-magnetic data-hover>Find Your Part</a>
+          <a href="https://wa.me/0000000000" class="btn btn--ghost btn--lg" data-magnetic data-hover>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.6-4.6A8.5 8.5 0 1 1 8 19.6z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER (placeholder contact details) -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#top" class="logo" data-hover>
+            <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 30 28h-7.2L16 14.6 9.2 28H2z" fill="currentColor"/><path d="M16 20.5 19.6 28h-7.2z" fill="var(--accent)"/></svg>
+            <span class="logo__text">APEX<small>AUTO PARTS</small></span>
+          </a>
+          <p>Genuine and aftermarket parts, matched to your vehicle and delivered fast.</p>
+          <form class="news" id="newsForm" novalidate>
+            <input type="email" placeholder="Your email" aria-label="Email address" required />
+            <button type="submit" class="btn btn--primary btn--sm" data-hover>Subscribe</button>
+          </form>
+        </div>
+
+        <nav class="footer__col" aria-label="Shop">
+          <h4>Shop</h4>
+          <a href="#categories">Engine</a><a href="#categories">Brakes</a><a href="#categories">Suspension</a><a href="#categories">Electrical</a><a href="#categories">Filters</a>
+        </nav>
+        <nav class="footer__col" aria-label="Company">
+          <h4>Company</h4>
+          <a href="#about">About us</a><a href="#brands">Brands</a><a href="#wholesale">Wholesale</a><a href="#reviews">Reviews</a>
+        </nav>
+        <nav class="footer__col" aria-label="Support">
+          <h4>Support</h4>
+          <a href="#">Shipping</a><a href="#">Returns</a><a href="#">Warranty</a><a href="#">FAQ</a>
+        </nav>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="tel:+000000000000">+00 000 000 0000</a>
+          <a href="mailto:hello@example.com">hello@example.com</a>
+          <span>Your street address,<br />City, Country</span>
+          <div class="social">
+            <a href="#" aria-label="Instagram" data-hover><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6" fill="currentColor"/></svg></a>
+            <a href="#" aria-label="Facebook" data-hover><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5A.5.5 0 0 1 14 8z"/></svg></a>
+            <a href="#" aria-label="YouTube" data-hover><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__word" aria-hidden="true">APEX</div>
+
+      <div class="footer__bottom">
+        <span>&copy; <span id="year">2025</span> APEX Auto Parts. All rights reserved.</span>
+        <div class="pay"><i>Cards</i><i>Bank transfer</i><i>Cash on delivery</i></div>
+        <span class="footer__legal"><a href="#">Privacy</a><a href="#">Terms</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="star" viewBox="0 0 24 24"><path fill="currentColor" d="m12 2 3.1 6.6 7.2.9-5.3 5 1.4 7.2L12 18.1 5.6 21.7 7 14.5 1.7 9.5l7.2-.9z"/></symbol>
+  </svg>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
