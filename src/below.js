@@ -1,4 +1,5 @@
 import { animate, stagger } from 'animejs';
+import layout from './exploded-layout.json';
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -134,35 +135,76 @@ export function initBelow({ showToast, reduceMotion, finePointer }) {
     });
   });
 
-  /* ---------- Exploded view (scroll-driven) ---------- */
+  /* ---------- Exploded view (scroll-driven) ----------
+     Stage 1: the assembled turbo cross-fades into the five parts (bunched together).
+     Stage 2: the parts spread out to their exploded positions and the labels appear.
+     Part sizes/positions come from exploded-layout.json (written by the image slicer). */
   const xvSection = $('#engineering');
-  const xvParts = $$('.xv__part').map((g) => ({
-    g,
-    cx: Number(g.dataset.cx),
-    dx: Number(g.dataset.dx),
-    label: $('.xv__label', g),
-  }));
-  const xvSvg = $('#xvSvg');
+  const xvRow = $('#xvRow');
+  const xvAsm = $('#xvAsm');
+  const xvBar = $('#xvBar');
   const xvMobile = window.matchMedia('(max-width: 900px)');
-  let spread = 1;
-  function applyXvLayout() {
-    spread = xvMobile.matches ? 0.55 : 1;
-    xvSvg.setAttribute('viewBox', xvMobile.matches ? '170 120 1060 290' : '0 0 1400 560');
+  const XV_Z = [3, 2, 4, 2, 3];
+  const xvParts = $$('.xv__p', xvRow).map((img, i) => ({ img, lab: $(`.xv__lab[data-i="${i}"]`, xvRow), ...layout.parts[i] }));
+  let xvGeo = null;
+  let lastE = -1;
+  xvRow.style.setProperty('--ar', layout.aspect);
+  xvParts.forEach((p, i) => { p.img.style.zIndex = XV_Z[i]; p.lab.style.zIndex = 6; });
+  xvAsm.style.zIndex = 1;
+
+  function layoutXV() {
+    const W = xvRow.clientWidth;
+    const H = xvRow.clientHeight;
+    if (!W || !H) return;
+    const mobile = xvMobile.matches;
+    const mx = W / 2;
+    const my = H / 2;
+    const COMPACT = 0.3;
+    const slot = H / xvParts.length;
+
+    const parts = xvParts.map((p, i) => {
+      let w, h, x, y, lx, ly;
+      if (!mobile) {
+        w = p.w * W; h = (w * p.ph) / p.pw; x = p.cx * W; y = p.cy * H; lx = x; ly = H + 14;
+      } else {
+        const s = Math.min((W * 0.56) / p.pw, (slot * 0.9) / p.ph);
+        w = p.pw * s; h = p.ph * s; x = W * 0.3; y = slot * (i + 0.5); lx = W * 0.62; ly = y - 18;
+      }
+      p.img.style.width = `${w}px`;
+      p.img.style.height = `${h}px`;
+      return { w, h, x, y, cxC: mx + (x - mx) * COMPACT, cyC: my + (y - my) * COMPACT, lx, ly };
+    });
+
+    let aw, ah;
+    if (!mobile) { ah = Math.min(H * 1.35, (W * 0.6) / layout.assembledAspect); aw = ah * layout.assembledAspect; }
+    else { aw = W * 0.98; ah = aw / layout.assembledAspect; }
+    xvAsm.style.width = `${aw}px`;
+    xvAsm.style.height = `${ah}px`;
+    xvGeo = { parts, asm: { aw, ah, x: mx, y: my } };
     lastE = -1;
   }
-  const xvAxis = $('#xvAxis');
-  const xvBar = $('#xvBar');
-  let lastE = -1;
 
   function renderXV(e) {
-    if (Math.abs(e - lastE) < 0.0005) return;
+    if (!xvGeo || Math.abs(e - lastE) < 0.0004) return;
     lastE = e;
-    const labelOpacity = clamp((e - 0.7) / 0.3);
-    xvParts.forEach((p) => {
-      p.g.setAttribute('transform', `translate(${p.cx + p.dx * spread * e} 0)`);
-      p.label.style.opacity = labelOpacity;
+    const split = smooth(e / 0.22);            // assembled -> parts
+    const spread = smooth((e - 0.14) / 0.86);  // parts fly apart
+    const labelOpacity = clamp((spread - 0.8) / 0.2);
+    const { asm } = xvGeo;
+
+    xvAsm.style.opacity = 1 - split;
+    xvAsm.style.transform = `translate(${asm.x - asm.aw / 2}px, ${asm.y - asm.ah / 2}px) scale(${1 + 0.07 * split})`;
+
+    xvParts.forEach((p, i) => {
+      const g = xvGeo.parts[i];
+      const x = g.cxC + (g.x - g.cxC) * spread;
+      const y = g.cyC + (g.y - g.cyC) * spread;
+      const sc = 0.62 + 0.38 * spread;
+      p.img.style.opacity = split;
+      p.img.style.transform = `translate(${x - g.w / 2}px, ${y - g.h / 2}px) scale(${sc})`;
+      p.lab.style.opacity = labelOpacity;
+      p.lab.style.transform = `translate(${g.lx}px, ${g.ly + (1 - labelOpacity) * 12}px)`;
     });
-    xvAxis.style.opacity = clamp(e * 1.4);
     xvBar.style.transform = `scaleX(${e})`;
   }
 
@@ -171,11 +213,13 @@ export function initBelow({ showToast, reduceMotion, finePointer }) {
     const r = xvSection.getBoundingClientRect();
     if (r.bottom < -200 || r.top > window.innerHeight + 200) return;
     const total = xvSection.offsetHeight - window.innerHeight;
-    renderXV(smooth((clamp(-r.top / total) - 0.08) / 0.62));
+    renderXV(clamp((clamp(-r.top / total) - 0.05) / 0.72));
   }
-  xvMobile.addEventListener('change', () => { applyXvLayout(); updateXV(); });
-  applyXvLayout();
-  renderXV(0);
+
+  layoutXV();
+  renderXV(reduceMotion ? 1 : 0);
+  if ('ResizeObserver' in window) new ResizeObserver(() => { layoutXV(); updateXV(); }).observe(xvRow);
+  xvMobile.addEventListener('change', () => { layoutXV(); updateXV(); });
 
   /* ---------- How it works: line draws in ---------- */
   const stepsLine = $('#stepsLine');

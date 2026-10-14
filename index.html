@@ -350,72 +350,20 @@
           </div>
 
           <div class="xv__diagram">
-            <svg class="xv__svg" id="xvSvg" viewBox="0 0 1400 560" role="img" aria-label="Exploded view of a turbocharger showing five components">
-              <defs>
-                <linearGradient id="gMetal" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#25272c" /><stop offset=".42" stop-color="#9a9ea8" /><stop offset="1" stop-color="#1f2125" />
-                </linearGradient>
-                <linearGradient id="gMetalDark" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#1b1c20" /><stop offset=".45" stop-color="#5d6068" /><stop offset="1" stop-color="#16171a" />
-                </linearGradient>
-                <linearGradient id="gHeat" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#2a1a17" /><stop offset=".45" stop-color="#b4573a" /><stop offset="1" stop-color="#241512" />
-                </linearGradient>
-              </defs>
-
-              <line class="xv__axis" id="xvAxis" x1="40" y1="260" x2="1360" y2="260" />
-
-              <!-- 05 turbine housing -->
-              <g class="xv__part" data-cx="900" data-dx="300">
-                <path class="xv__fill" fill="url(#gHeat)" d="M60 215 L30 170 Q-20 120-80 140 Q-135 170-130 260 Q-135 350-80 380 Q-20 400 30 350 L60 305 Z" />
-                <rect class="xv__fill" fill="url(#gHeat)" x="60" y="212" width="70" height="96" rx="4" />
-                <rect class="xv__line" x="124" y="200" width="10" height="120" rx="3" fill="url(#gMetal)" />
-                <circle class="xv__line" cx="-40" cy="260" r="72" fill="none" stroke-dasharray="4 5" />
-                <circle class="xv__line" cx="-40" cy="260" r="38" fill="none" />
-                <circle cx="-95" cy="150" r="5" fill="#0b0c0e" class="xv__line" /><circle cx="-95" cy="370" r="5" fill="#0b0c0e" class="xv__line" />
-                <g class="xv__label"><line x1="0" y1="408" x2="0" y2="432" /><text x="0" y="458" class="xv__n">05</text><text x="0" y="484" class="xv__t">Turbine Housing</text></g>
-              </g>
-              <!-- 01 compressor housing -->
-              <g class="xv__part" data-cx="470" data-dx="-300">
-                <path class="xv__fill" fill="url(#gMetal)" d="M-60 215 L-30 170 Q20 120 80 140 Q135 170 130 260 Q135 350 80 380 Q20 400-30 350 L-60 305 Z" />
-                <rect class="xv__fill" fill="url(#gMetal)" x="-130" y="212" width="74" height="96" rx="4" />
-                <rect class="xv__line" x="-134" y="200" width="10" height="120" rx="3" fill="url(#gMetalDark)" />
-                <circle class="xv__line" cx="40" cy="260" r="72" fill="none" stroke-dasharray="4 5" />
-                <circle class="xv__line" cx="40" cy="260" r="38" fill="none" />
-                <circle cx="95" cy="150" r="5" fill="#0b0c0e" class="xv__line" /><circle cx="95" cy="370" r="5" fill="#0b0c0e" class="xv__line" />
-                <g class="xv__label"><line x1="0" y1="408" x2="0" y2="432" /><text x="0" y="458" class="xv__n">01</text><text x="0" y="484" class="xv__t">Compressor Housing</text></g>
-              </g>
-              <!-- 03 center cartridge -->
-              <g class="xv__part" data-cx="690" data-dx="0">
-                <rect class="xv__fill" fill="url(#gMetalDark)" x="-60" y="205" width="120" height="110" rx="10" />
-                <rect class="xv__fill" fill="url(#gMetal)" x="-82" y="188" width="24" height="144" rx="4" />
-                <rect class="xv__fill" fill="url(#gMetal)" x="58" y="188" width="24" height="144" rx="4" />
-                <rect class="xv__fill" fill="url(#gMetal)" x="-16" y="172" width="32" height="36" rx="4" />
-                <rect class="xv__fill" fill="url(#gMetal)" x="-16" y="312" width="32" height="36" rx="4" />
-                <path class="xv__line" d="M-60 240h120M-60 280h120" fill="none" />
-                <g class="xv__label"><line x1="0" y1="352" x2="0" y2="432" /><text x="0" y="458" class="xv__n">03</text><text x="0" y="484" class="xv__t">Center Cartridge</text></g>
-              </g>
-              <!-- 02 compressor wheel -->
-              <g class="xv__part" data-cx="500" data-dx="-150">
-                <path class="xv__fill" fill="url(#gMetal)" d="M-34 232 L34 192 L34 328 L-34 288 Z" />
-                <g class="xv__blades"><path d="M-34 236L34 196M-34 244L34 217M-34 252L34 238M-34 260L34 260M-34 268L34 281M-34 276L34 302M-34 284L34 323" /></g>
-                <g class="xv__label"><line x1="0" y1="338" x2="0" y2="478" /><text x="0" y="506" class="xv__n">02</text><text x="0" y="532" class="xv__t">Compressor Wheel</text></g>
-              </g>
-              <!-- 04 turbine wheel -->
-              <g class="xv__part" data-cx="860" data-dx="150">
-                <path class="xv__fill" fill="url(#gHeat)" d="M-40 205 L40 238 L40 282 L-40 315 Z" />
-                <g class="xv__blades"><path d="M-40 209L40 240M-40 227L40 247M-40 245L40 254M-40 263L40 261M-40 280L40 268M-40 298L40 275M-40 312L40 280" /></g>
-                <g class="xv__label"><line x1="0" y1="322" x2="0" y2="478" /><text x="0" y="506" class="xv__n">04</text><text x="0" y="532" class="xv__t">Turbine Wheel</text></g>
-              </g>
-            </svg>
-
-            <ol class="xv__legend">
-              <li><b>01</b> Compressor housing <span>Directs and pressurises intake air</span></li>
-              <li><b>02</b> Compressor wheel <span>Machined blades spin up to force air in</span></li>
-              <li><b>03</b> Center cartridge <span>Bearings, oil and coolant passages</span></li>
-              <li><b>04</b> Turbine wheel <span>Heat-resistant wheel driven by exhaust gas</span></li>
-              <li><b>05</b> Turbine housing <span>Channels exhaust energy to the wheel</span></li>
-            </ol>
+            <div class="xv__row" id="xvRow">
+              <div class="xv__glow" aria-hidden="true"></div>
+              <img class="xv__asm" id="xvAsm" src="/images/exploded/assembled.webp" alt="Assembled turbocharger" loading="lazy" decoding="async" draggable="false" />
+              <img class="xv__p" data-i="0" src="/images/exploded/part-1-compressor-housing.webp" alt="Compressor Housing" loading="lazy" decoding="async" draggable="false" />
+              <img class="xv__p" data-i="1" src="/images/exploded/part-2-compressor-wheel.webp" alt="Compressor Wheel" loading="lazy" decoding="async" draggable="false" />
+              <img class="xv__p" data-i="2" src="/images/exploded/part-3-center-cartridge.webp" alt="Center Cartridge" loading="lazy" decoding="async" draggable="false" />
+              <img class="xv__p" data-i="3" src="/images/exploded/part-4-turbine-wheel.webp" alt="Turbine Wheel" loading="lazy" decoding="async" draggable="false" />
+              <img class="xv__p" data-i="4" src="/images/exploded/part-5-turbine-housing.webp" alt="Turbine Housing" loading="lazy" decoding="async" draggable="false" />
+              <div class="xv__lab" data-i="0"><b>01</b><span>Compressor Housing</span></div>
+              <div class="xv__lab" data-i="1"><b>02</b><span>Compressor Wheel</span></div>
+              <div class="xv__lab" data-i="2"><b>03</b><span>Center Cartridge</span></div>
+              <div class="xv__lab" data-i="3"><b>04</b><span>Turbine Wheel</span></div>
+              <div class="xv__lab" data-i="4"><b>05</b><span>Turbine Housing</span></div>
+            </div>
           </div>
 
           <div class="xv__progress" aria-hidden="true"><span>Assembled</span><div><i id="xvBar"></i></div><span>Exploded</span></div>

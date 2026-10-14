@@ -1,0 +1,51 @@
+{
+  "aspect": 3.9895,
+  "assembledAspect": 1.8282,
+  "parts": [
+    {
+      "file": "part-1-compressor-housing.webp",
+      "cx": 0.09974,
+      "cy": 0.5,
+      "w": 0.19947,
+      "h": 1,
+      "pw": 756,
+      "ph": 950
+    },
+    {
+      "file": "part-2-compressor-wheel.webp",
+      "cx": 0.30739,
+      "cy": 0.48316,
+      "w": 0.18628,
+      "h": 0.52842,
+      "pw": 706,
+      "ph": 502
+    },
+    {
+      "file": "part-3-center-cartridge.webp",
+      "cx": 0.50396,
+      "cy": 0.47579,
+      "w": 0.1657,
+      "h": 0.64632,
+      "pw": 628,
+      "ph": 614
+    },
+    {
+      "file": "part-4-turbine-wheel.webp",
+      "cx": 0.68496,
+      "cy": 0.48263,
+      "w": 0.15778,
+      "h": 0.47895,
+      "pw": 598,
+      "ph": 455
+    },
+    {
+      "file": "part-5-turbine-housing.webp",
+      "cx": 0.89393,
+      "cy": 0.5,
+      "w": 0.21214,
+      "h": 0.94947,
+      "pw": 804,
+      "ph": 902
+    }
+  ]
+}
